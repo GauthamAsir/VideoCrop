@@ -72,6 +72,8 @@ public class VideoCropActivity extends AppCompatActivity implements VideoPlayer.
     private FFtask mFFTask;
     private FFmpeg mFFMpeg;
 
+    private String TAG = "VideoCropActivity";
+
     public static Intent createIntent(Context context, String inputPath, String outputPath) {
         Intent intent = new Intent(context, VideoCropActivity.class);
         intent.putExtra(VIDEO_CROP_INPUT_PATH, inputPath);
@@ -353,19 +355,19 @@ public class VideoCropActivity extends AppCompatActivity implements VideoPlayer.
                 @Override
                 public void onSuccess(String message) {
                     setResult(RESULT_OK);
-                    Log.e("onSuccess", message);
+                    Log.i(TAG,"Success");
                     finish();
                 }
 
                 @Override
                 public void onProgress(String message) {
-                    Log.e("onProgress", message);
+                    Log.i(TAG,"On Progress");
                 }
 
                 @Override
                 public void onFailure(String message) {
                     Toast.makeText(VideoCropActivity.this, "Failed to crop!", Toast.LENGTH_SHORT).show();
-                    Log.e("onFailure", message);
+                    Log.e(TAG, "Failed: " + message);
                 }
 
                 @Override
