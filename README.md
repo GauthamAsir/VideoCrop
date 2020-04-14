@@ -12,7 +12,7 @@ allprojects {
     }
 }
 dependencies {
-    implementation 'com.github.VRGsoftUA:VideoCrop:1.0'
+    implementation 'com.github.GauthamAsir:VideoCrop:1.0'
 }
 ```
 2. In code you need to start Activityfor result like so:
